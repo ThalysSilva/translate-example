@@ -15,7 +15,9 @@ export default function useCookies() {
     }
 
     document.cookie = keyName + "=" + (storeValue || "") + expires + "; path=/";
+    return storeValue
   }
+  
   function getCookie(keyName: string) {
     const allCookies = document.cookie.split("; ");
     const cookieString = allCookies.filter((cookie) =>
