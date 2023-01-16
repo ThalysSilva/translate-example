@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { ObjectRecursiveOf } from "../@types/objects";
 
 export function useLocale() {
-  const [userLang, setUserLang] = useState(LANGUAGES.ptBR);
+  const [userLang, setUserLang] = useState<string>(LANGUAGES.ptBR);
   const { getCookie, setCookie } = useCookies();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export function useLocale() {
     }
   }
 
-  function changeLanguage(lang: "es-US" | "es" | "pt-BR") {
+  function changeLanguage(lang: "en-US" | "es" | "pt-BR") {
     setUserLang(setCookie(LOCAL_USER_LANG, lang));
   }
 
